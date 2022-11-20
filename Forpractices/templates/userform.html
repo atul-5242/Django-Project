@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form  action=" {% url 'saveform' %} " method="post" ><!--actiion is used for redirection on another page and use data on that page. -->
+        {% csrf_token %}
+        <!-- {{form}}   -->   <!--For Django form creation.-->
+        <label for="id1" class="Acount_login" >
+            {% if error %}
+            <div class="alert alert-danger" role="alert">
+                Please Enter the Value
+            </div>
+            {% endif %}
+            <b>Enter User Name</b><br>
+            <input type="text" name="usern1"  placeholder="user name"><br>
+            <b>Enter Password</b><br>
+            <input type="password" name="pass1"  placeholder="Password">
+        </label><br>
+        {% comment %} <input type="text" name="12"  value="{{we}}"  placeholder="wq"> {% endcomment %}
+        <button>Submit</button><br>
+        {% comment %} 
+        
+        password:<br>
+        {% comment %} {{passwor}} {% endcomment %}
+       {% comment %} z= {% endcomment %}
+        <input type="text" value="{{user}}">
+        {% comment %} {{'hello'}} 
+        
+        {% endcomment %}
+       </form>
+       {%for i in servicedata%}
+       <pre> User_name: {{i.user_name}}   Password:{{i.passward}}</pre></br>
+    </br>
+       {%endfor%}
+
+    {% comment %} {{output}} {% endcomment %}
+</body>
+</html>
